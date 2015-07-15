@@ -4,13 +4,23 @@
 <html>
 	<head>
 
+		<link rel="stylesheet" type="text/css" href="normalize.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 		<script>
 
+//$("#big_canvas")
 			$(function() {
 
-				$("#testdiv").text("test");
+				var ctx = document.getElementById("big_canvas").getContext("2d");
+				//ctx.moveTo(0,0);
+				//ctx.lineTo(1920,1080);
+				//ctx.stroke();
+				wWidth = window.innerWidth;
+				wHeight = window.innerHeight;
+				ctx.canvas.width  = wWidth;
+				ctx.canvas.height = wHeight;
+				ctx.fillRect(0,0,wWidth,wHeight);
 
 			});
 
@@ -18,9 +28,10 @@
 		
 	</head>
 	<body>
-		<div id="test">
+		<div id="canvas_div">
 
-
+			<canvas id="big_canvas">
+			</canvas>
 
 		</div>
 	</body>
