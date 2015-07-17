@@ -63,10 +63,10 @@ function run(){
 
 	// drawImage(img, source x, y, source w, h, destination x, y, destination w, h)
 
+	// ctx.drawImage(testImage, 16, 0, 16, 16, 10, 200, 64, 64);
 	for(var x=0; x<10; x++){
 
-		// ctx.drawImage(testImage, 16, 0, 16, 16, 10, 200, 64, 64);
-		ctx.drawImage(testImage, 16 + (16*(x%2)), 0, 16, 16, 128*x, 200, 128, 128);
+		ctx.drawImage(testImage, 16 + (16*(x%3)), 0, 16, 16, 16*x, 0, 16, 16);
 
 	}
 
@@ -76,4 +76,16 @@ function run(){
 	frames++;
 
 	lastTime = Date.now();
+}
+
+window.onresize = function(event){
+
+	wWidth = window.innerWidth;
+	wHeight = window.innerHeight;
+
+	ctx.canvas.width  = wWidth;
+	ctx.canvas.height = wHeight;
+
+	ctx.fillRect(0,0,wWidth,wHeight);
+
 }
