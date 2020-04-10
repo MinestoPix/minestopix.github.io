@@ -18,9 +18,11 @@
 			background-color:#000;">THIS YOU SEE??<h1>
 	</body>
 	<script>
+
 		var url = new URL(location.href);
 		var message = url.searchParams.get("message");
 		var header = document.getElementById("header")
 		header.innerHTML = message;
+
 	</script>
 </html>
