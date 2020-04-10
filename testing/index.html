@@ -6,15 +6,21 @@
 
 		<link rel="stylesheet" type="text/css" href="normalize.css">
 
-		
+
 	</head>
 	<body>
 		<h1 style="color:#FFF;
 			background-color:#000;">This is a header</h1>
 		<p style="background-color:#FFF;
 			color:#FFF;">And this is some text</p>
-		<h1 style="font-size:100;
+		<h1 id="header" style="font-size:100px;
 			color:#FFF;
 			background-color:#000;">THIS YOU SEE??<h1>
 	</body>
+	<script>
+		var url = new URL(location.href);
+		var message = url.get("message");
+		var header = document.getElementById("header")
+		header.innerHTML = message;
+	</script>
 </html>
