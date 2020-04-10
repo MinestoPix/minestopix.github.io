@@ -19,7 +19,7 @@
 	</body>
 	<script>
 		var url = new URL(location.href);
-		var message = url.get("message");
+		var message = url.searchParams("message");
 		var header = document.getElementById("header")
 		header.innerHTML = message;
 	</script>
