@@ -22,9 +22,15 @@
 		/*
 		var url = new URL(location.href);
 		var message = url.searchParams.get("message");
-		var header = document.getElementById("header");
 		*/
+		var header = document.getElementById("header");
 		header.innerHTML = location.search;
+
+		function cntdwn() {
+			var d = new Date();
+			header.innerHTML = d.toLocaleTimeString();
+		}
+		window.setInterval(cntdwn, 1000);
 
 	</script>
 </html>
