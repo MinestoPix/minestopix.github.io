@@ -25,6 +25,11 @@
 		*/
 
 		function msToLocaleString(ms){
+			negative = false
+			if (ms < 0) {
+				negative = true
+				ms = -ms
+			}
 			sec = Math.round(ms / 1000)
 			secmod = sec % 60
 			secleft = sec - secmod
@@ -32,7 +37,8 @@
 			minmod = min % 60
 			minleft = min - minmod
 			hr = minleft / 60
-			str = String(hr).padStart(2, '0') + ':' +
+			sign = negative ? '-' : ''
+			str = sign + String(hr).padStart(2, '0') + ':' +
 				String(minmod).padStart(2, '0') + ':' +
 				String(secmod).padStart(2, '0')
 			return str
