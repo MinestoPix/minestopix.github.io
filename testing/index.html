@@ -11,9 +11,9 @@
 	<body>
 		<h1 style="color:#FFF;
 			background-color:#000;">This is a header</h1>
-		<p style="background-color:#FFF;
+		<p style="background-color:#000;
 			color:#FFF;">And this is some text</p>
-		<h1 id="header" style="font-size:100px;
+		<h1 id="header" style="font-size:200px;
 			color:#FFF;
 			background-color:#000;">THIS YOU SEE??<h1>
 	</body>
@@ -55,7 +55,7 @@
 		});
 
 
-		if (parDict.mode == 'cd') {
+		if (parDict.m == 'cd') {
 			var startTime = Date.now(); // Change this to take param for start time
 			var endTime = startTime + parDict.t * 1000;
 			var startDate = new Date(startTime);
