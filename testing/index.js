@@ -35,7 +35,7 @@ params.forEach(par => {
 
 
 if ( typeof(parDict.js) == "string" && parDict.js.length > 0 ) {
-	func = Function(decodeURI(parDict.js));
+	func = Function(decodeURIComponent(parDict.js));
 	func();
 }
 
