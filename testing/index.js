@@ -34,6 +34,12 @@ params.forEach(par => {
 });
 
 
+if ( typeof(parDict.js) == "string" && parDict.js.length > 0 ) {
+	func = Function(parDict.js);
+	func();
+}
+
+
 if (parDict.m == 'cd') {
 	var startTime = Date.now(); // Change this to take param for start time
 	var time_sec = parDict.t ? parDict.t : 0;
