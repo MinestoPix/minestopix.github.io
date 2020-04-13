@@ -4,23 +4,23 @@ var message = url.searchParams.get("message");
 */
 
 function msToLocaleString(ms){
-	negative = false
+	negative = false;
 	if (ms < 0) {
-		negative = true
-		ms = -ms
+		negative = true;
+		ms = -ms;
 	}
-	sec = Math.round(ms / 1000)
-	secmod = sec % 60
-	secleft = sec - secmod
-	min = secleft / 60
-	minmod = min % 60
-	minleft = min - minmod
-	hr = minleft / 60
-	sign = negative ? '-' : ''
+	sec = Math.round(ms / 1000);
+	secmod = sec % 60;
+	secleft = sec - secmod;
+	min = secleft / 60;
+	minmod = min % 60;
+	minleft = min - minmod;
+	hr = minleft / 60;
+	sign = negative ? '-' : '';
 	str = sign + String(hr).padStart(2, '0') + ':' +
 		String(minmod).padStart(2, '0') + ':' +
-		String(secmod).padStart(2, '0')
-	return str
+		String(secmod).padStart(2, '0');
+	return str;
 }
 
 var main_display = document.getElementById("main_display");
@@ -40,9 +40,12 @@ if (parDict.m == 'cd') {
 	var endTime = startTime + time_sec * 1000;
 	var startDate = new Date(startTime);
 	var endDate = new Date(endTime);
+
+	var curTime = Date.now();
+	var timeLeft = endTime - curTime;
 	function cntdwn() {
-		var curTime = Date.now();
-		var timeLeft = endTime - curTime;
+		curTime = Date.now();
+		timeLeft = endTime - curTime;
 		main_display.innerHTML = msToLocaleString(timeLeft);
 	}
 	window.setInterval(cntdwn, 1000);
