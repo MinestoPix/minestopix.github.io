@@ -23,8 +23,8 @@ function msToLocaleString(ms){
 	return str
 }
 
-var header = document.getElementById("header");
-header.innerHTML = location.search;
+var main_display = document.getElementById("main_display");
+// main_display.innerHTML = location.search;
 
 var params = location.search.split('?')[1].split('&');
 parDict = {};
@@ -36,14 +36,14 @@ params.forEach(par => {
 
 if (parDict.m == 'cd') {
 	var startTime = Date.now(); // Change this to take param for start time
-	var endTime = startTime + parDict.t * 1000;
+	var time_sec = parDict.t ? parDict.t : 0;
+	var endTime = startTime + time_sec * 1000;
 	var startDate = new Date(startTime);
 	var endDate = new Date(endTime);
 	function cntdwn() {
 		var curTime = Date.now();
 		var timeLeft = endTime - curTime;
-		header.innerHTML = msToLocaleString(timeLeft);
+		main_display.innerHTML = msToLocaleString(timeLeft);
 	}
 	window.setInterval(cntdwn, 1000);
 }
-
