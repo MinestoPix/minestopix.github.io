@@ -2,6 +2,25 @@
 var url = new URL(location.href);
 var message = url.searchParams.get("message");
 */
+// https://github.com/KspR/toDOM
+(function(a){var b=window[a]=function(a,c){if(!a)return null;if(a.nodeName)return a;if(typeof a=="string")return b({tag:a},c);if(a.length)return b({tag:a[0],children:a[1]},c);var d={},e;if(!a.tag)d.tag="div";else{var f=a.tag.split(/ /),g=f.shift();f.length&&(d.innerHTML=f.join(" ")),a.innerHTML&&(d.innerHTML=a.innerHTML),f=g.split(/\.|#/),d.tag=f.shift()||"div";if(f.length){d.attr=a.attr||{};var h="",i=/\.([^\.$#]*)/g;while(e=i.exec(g))h+=e[1]+" ";h&&(d.attr["class"]=h.slice(0,h.length-1));var j=/#([^\.$]*)/.exec(g);j&&(d.attr.id=j[1])}}d.attr=d.attr||a.attr,d.innerHTML=d.innerHTML||a.innerHTML;var k=document.createElement(d.tag);if(d.attr)for(var l in d.attr)k.setAttribute(l,d.attr[l]);a.as&&(c[a.as]=k),!a.as&&c&&d.attr&&typeof d.attr["class"]=="string"&&!c[e=d.attr["class"].split(" ")[0]]&&(c[e]=k),typeof d.innerHTML!="undefined"&&(k.innerHTML=d.innerHTML);if(a.events)for(var m in a.events)k.addEventListener(m,a.events[m],!1);if(a.style)for(var n in a.style)k.style[n]=a.style[n];if(a.children)for(var o=-1,p=a.children.length;++o<p;)(e=b(a.children[o],c))&&k.appendChild(e);return k}})("toDOM")
+
+
+// rewrite html to toDOM.js
+
+var main_display = toDOM({
+	tag:'div',
+	style:{
+		font-size:		'200px',
+		color:			'#FFF',
+		background-color:	'#000',
+		position:		'fixed',
+		bottom:			'0px',
+		right:			'0px'
+	},
+	innerHTML:'WARNING! Text doesn\'t change for some reason'
+})
+
 
 function msToLocaleString(ms){
 	negative = false;
