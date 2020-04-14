@@ -20,6 +20,7 @@ var main_display = toDOM({
 	},
 	innerHTML:'WARNING! Text doesn\'t change for some reason'
 })
+document.body.appendChild(main_display);
 
 
 function msToLocaleString(ms){
