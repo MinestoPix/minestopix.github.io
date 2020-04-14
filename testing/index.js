@@ -42,7 +42,7 @@ function msToLocaleString(ms){
 	return str;
 }
 
-var main_display = document.getElementById("main_display");
+// var main_display = document.getElementById("main_display");
 // main_display.innerHTML = location.search;
 
 var params = location.search.split('?')[1].split('&');
