@@ -11,9 +11,9 @@ var message = url.searchParams.get("message");
 var main_display = toDOM({
 	tag:'div',
 	style:{
-		font-size:		'200px',
+		fontSize:		'200px',
 		color:			'#FFF',
-		background-color:	'#000',
+		backgroundColor:	'#000',
 		position:		'fixed',
 		bottom:			'0px',
 		right:			'0px'
