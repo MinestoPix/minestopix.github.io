@@ -49,6 +49,7 @@ if (parDict.m == 'cd') {
 
 	var curTime = Date.now();
 	var timeLeft = endTime - curTime;
+	main_display.innerHTML = msToLocaleString(timeLeft);
 	function cntdwn() {
 		curTime = Date.now();
 		timeLeft = endTime - curTime;
